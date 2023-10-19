@@ -108,7 +108,12 @@ public class JavaOne {
         System.out.printf("Number of Vowel %d \nNumber of Constants %d", vowel, constants);
     }
     public void ex6() {
-        System.out.println("Student 1: ex6.");
+        sc = new Scanner(System.in);
+        System.out.print("Enter First Number: ");
+        int one = sc.nextInt();
+        System.out.print("Enter Second Number: ");
+        int two = sc.nextInt();
+        System.out.printf("Result %d",(one+two));
     }
 
     public void ex7() {
