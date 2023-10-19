@@ -27,7 +27,24 @@ public class JavaOne {
     }
 
     public void ex2() {
-        System.out.println("Student 1: ex2.");
+            /*
+        1. prompt use for a sentence with proper formmting
+        2. store the sentence in a string variable
+        3. create an int variable and initialize it to zero
+        4. loop thru the string and look for the upper case char
+        5. increment the variable when a upper cae is found
+         */
+        sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String sentence = sc.nextLine();
+        int count = 0;
+        for(int i = 0; i < sentence.length(); i++){
+            char c = sentence.charAt(i);
+            if(Character.isUpperCase(c)){
+                count++;
+            }
+        }
+        System.out.printf("Number of uppercase letters: %d", count);
     }
 
     public void ex3() {
