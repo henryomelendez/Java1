@@ -85,11 +85,35 @@ public class JavaOne {
     }
 
     public void ex5() {
-        System.out.println("Student 1: ex5.");
+               /*
+        1. prompt user for a word / string
+        2. store the word / string in a variable
+        3. create vowel and constant integer variables
+        4. then create a helper method to check if a letter is a vowel
+        5. then return the count
+         */
+        System.out.println("Enter a String: ");
+        sc = new Scanner(System.in);
+        String word = sc.nextLine();
+        int vowel = 0, constants = 0;
+        for(int i = 0; i < word.length(); i++){
+            char c = word.charAt(i);
+            if(isvowel(c)){
+                vowel++;
+            }
+            else {
+                constants++;
+            }
+        }
+        System.out.printf("Number of Vowel %d \nNumber of Constants %d", vowel, constants);
     }
-
     public void ex6() {
-        System.out.println("Student 1: ex6.");
+        sc = new Scanner(System.in);
+        System.out.print("Enter First Number: ");
+        int one = sc.nextInt();
+        System.out.print("Enter Second Number: ");
+        int two = sc.nextInt();
+        System.out.printf("Result %d",(one+two));
     }
 
     public void ex7() {
@@ -128,5 +152,14 @@ public class JavaOne {
             end--;
         }
         return true;
+    }
+    public boolean isvowel(char c){
+        String vowel = "aeiouAEIOU";
+        for(int i = 0; i < vowel.length(); i++){
+            if(vowel.charAt(i) == c){
+                return true;
+            }
+        }
+        return false;
     }
 }
