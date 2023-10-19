@@ -48,7 +48,20 @@ public class JavaOne {
     }
 
     public void ex3() {
-        System.out.println("Student 1: ex3.");
+              /*
+        1. prompt user for a string
+        2. store the string in a variable
+        3. create a string array and then store the string using the split method to break up word on the white space
+        4. output the string
+         */
+        sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String sentence = sc.nextLine();
+        String[] arr = sentence.split(" ");
+        for(int i = 0; i < arr.length; i+=2){
+            arr[i] = arr[i].toUpperCase();
+        }
+        System.out.printf(String.join(" ", arr));
     }
 
     public void ex4() {
