@@ -65,7 +65,23 @@ public class JavaOne {
     }
 
     public void ex4() {
-        System.out.println("Student 1: ex4.");
+               /*
+        1. Prompt user for a string
+        2. create helper method to do the following :
+        2. store the string in a variable
+        3. use two pointers to check if all the characters match in the start and end pointer
+        4. return a boolean in the helper method
+        4. if they match return yes else no
+         */
+        sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String word = sc.nextLine();
+        if(ispalindrome(word.toLowerCase())){
+            System.out.println("YES");
+        }
+        else {
+            System.out.println("NO");
+        }
     }
 
     public void ex5() {
@@ -95,4 +111,22 @@ public class JavaOne {
     //
     // Private helper methods
     //
+    private boolean ispalindrome(String word) {
+        int start = 0;
+        int end = word.length() - 1;
+        while (start < end) {
+            if (!Character.isAlphabetic(word.charAt(start))) {
+                start++;
+            }
+            if (!Character.isAlphabetic(word.charAt(end))) {
+                end--;
+            }
+            if (word.charAt(start) != word.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
 }
