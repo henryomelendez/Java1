@@ -191,7 +191,6 @@ public class JavaOne {
          */
         int randomNumber = (int) (Math.random() * 5) + 1;
         boolean flag = true;
-
         while(flag){
             System.out.print("Enter a Number: ");
             sc = new Scanner(System.in);
@@ -205,9 +204,29 @@ public class JavaOne {
             }
         }
     }
-
     public void ex10() {
-        System.out.println("Student 1: ex10.");
+        /*
+        1. create a scanner for user input
+        2. collect the user input in a string array
+        3. create a string array and put the input and split on white spaces
+        4. do a double for loop one for each word and one for each letter of that word
+        5. intialize a string variable to keep track of the space and reset them after each word
+        6. in the second for loop print out the spaces + the letter at position j
+        7. add an empty space to the space to variable
+         */
+        sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+        String[] arr = input.split(" ");
+
+        for(int i = 0; i < arr.length; i++){
+            String word = arr[i];
+            String spaces = "";
+            for(int j = 0; j < word.length(); j++){
+                System.out.println(spaces + word.charAt(j));
+                spaces += " ";
+            }
+        }
     }
     //
     // Private helper methods
