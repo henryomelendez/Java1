@@ -8,14 +8,11 @@ public class JavaOne {
     //
     // Constructors
     //
-
     public JavaOne() {
     }
-
     //
     // Public methods
     //
-
     public void ex1() {
           /*
         1. collect user name
@@ -27,7 +24,6 @@ public class JavaOne {
         String name = sc.next();
         System.out.printf("Your name in upper case is %s", name.toUpperCase());
     }
-
     public void ex2() {
             /*
         1. prompt use for a sentence with proper formmting
@@ -48,7 +44,6 @@ public class JavaOne {
         }
         System.out.printf("Number of uppercase letters: %d", count);
     }
-
     public void ex3() {
               /*
         1. prompt user for a string
@@ -65,7 +60,6 @@ public class JavaOne {
         }
         System.out.printf(String.join(" ", arr));
     }
-
     public void ex4() {
                /*
         1. Prompt user for a string
@@ -84,7 +78,6 @@ public class JavaOne {
             System.out.println("NO");
         }
     }
-
     public void ex5() {
                /*
         1. prompt user for a word / string
@@ -107,7 +100,6 @@ public class JavaOne {
         }
         System.out.printf("Number of Vowel %d \nNumber of Constants %d", vowel, constants);
     }
-
     public void ex6() {
         sc = new Scanner(System.in);
         System.out.print("Enter First Number: ");
@@ -116,7 +108,6 @@ public class JavaOne {
         int two = sc.nextInt();
         System.out.printf("Result %d", (one + two));
     }
-
     public void ex7() {
         sc = new Scanner(System.in);
         System.out.print("Enter First Number: ");
@@ -136,7 +127,6 @@ public class JavaOne {
         }
         System.out.printf("Result : %d", res);
     }
-
     public void ex8() {
         sc = new Scanner(System.in);
         System.out.print("Enter price per square feet: ");
@@ -169,7 +159,6 @@ public class JavaOne {
         }
         System.out.printf("Total cost: $ %02f", total);
     }
-
     public void ex9() {
         System.out.println("Student 1: ex9.");
     }
