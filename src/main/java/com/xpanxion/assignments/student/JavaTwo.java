@@ -1,5 +1,7 @@
 package com.xpanxion.assignments.student;
 
+import com.xpanxion.assignments.shared.PersonRepository;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -23,6 +25,28 @@ public class JavaTwo {
         }
         for(int i = 0; i < personList.size(); i++){
             System.out.println(personList.get(i).toString());
+        }
+    }
+    public void ex2(){
+        sc = new Scanner(System.in);
+
+        while (true){
+            sc = new Scanner(System.in);
+            System.out.print("Enter Person ID: ");
+            String id = sc.nextLine();
+
+            if(id.equalsIgnoreCase("done")){
+                break;
+            }
+
+            try {
+                PersonRepository personRepository = new PersonRepository();
+
+                Person person = personRepository.getPerson(Integer.parseInt(id));
+                System.out.println(person.toString());
+            } catch (NullPointerException | NumberFormatException e) {
+                System.out.println("There are no employees with this id");
+            }
         }
     }
 }
