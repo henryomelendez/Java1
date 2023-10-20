@@ -1,21 +1,18 @@
 package com.xpanxion.assignments.student;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import com.xpanxion.assignments.Main;
 
+import java.util.Scanner;
 public class JavaOne {
     private static Scanner sc;
     //
     // Constructors
     //
-
     public JavaOne() {
     }
-
     //
     // Public methods
     //
-
     public void ex1() {
           /*
         1. collect user name
@@ -27,7 +24,6 @@ public class JavaOne {
         String name = sc.next();
         System.out.printf("Your name in upper case is %s", name.toUpperCase());
     }
-
     public void ex2() {
             /*
         1. prompt use for a sentence with proper formmting
@@ -48,7 +44,6 @@ public class JavaOne {
         }
         System.out.printf("Number of uppercase letters: %d", count);
     }
-
     public void ex3() {
               /*
         1. prompt user for a string
@@ -65,7 +60,6 @@ public class JavaOne {
         }
         System.out.printf(String.join(" ", arr));
     }
-
     public void ex4() {
                /*
         1. Prompt user for a string
@@ -84,7 +78,6 @@ public class JavaOne {
             System.out.println("NO");
         }
     }
-
     public void ex5() {
                /*
         1. prompt user for a word / string
@@ -107,8 +100,13 @@ public class JavaOne {
         }
         System.out.printf("Number of Vowel %d \nNumber of Constants %d", vowel, constants);
     }
-
     public void ex6() {
+        /*
+        1. create a scanner
+        2. take the first input store it in a variable
+        3. take the second input store it in a variable
+        4. print the addition both variables
+         */
         sc = new Scanner(System.in);
         System.out.print("Enter First Number: ");
         int one = sc.nextInt();
@@ -116,8 +114,14 @@ public class JavaOne {
         int two = sc.nextInt();
         System.out.printf("Result %d", (one + two));
     }
-
     public void ex7() {
+        /*
+        1. create a scanner to take the first and second numbers
+        2. use the scanner to store the first and second number
+        3. clear the scanner and then clear the results ask the user which operation he would like perform
+        4. use a switch case to perform the proper operation base on the input string of the user
+        5. return the value of the operation they wanted to perform.
+         */
         sc = new Scanner(System.in);
         System.out.print("Enter First Number: ");
         int one = sc.nextInt();
@@ -136,8 +140,15 @@ public class JavaOne {
         }
         System.out.printf("Result : %d", res);
     }
-
     public void ex8() {
+        /*
+        1. create a scanner to take the price per square foot
+        2. create an int variable to store the price
+        3. use a while loop to keep the program running while you add the dimensions
+        4. check if the string entered is done or width x height
+        5. if it is a valid string store the dimensions in a string array by splitting on the x
+        6. the perform the calculations to get the proper cost and add it into total cost
+         */
         sc = new Scanner(System.in);
         System.out.print("Enter price per square feet: ");
         double price = sc.nextDouble();
@@ -167,17 +178,37 @@ public class JavaOne {
                 System.out.println("Please Enter valid numbers for width and height");
             }
         }
-        System.out.printf("Total cost: $ %02f", total);
+        System.out.printf("Total cost: $ %.02f", total);
     }
-
     public void ex9() {
-        System.out.println("Student 1: ex9.");
+        /*
+        1. create a random number from 1 to 5
+        2. and store the number in a variable
+        3. create a flag boolean
+        4. use the flag boolean in a while loop to continue the program while the user
+        5. if the user guesses right then the flag gets switched to false
+        6. if the guess is wrong the user will continue untill they guess the number
+         */
+        int randomNumber = (int) (Math.random() * 5) + 1;
+        boolean flag = true;
+
+        while(flag){
+            System.out.print("Enter a Number: ");
+            sc = new Scanner(System.in);
+            int guess = sc.nextInt();
+            if(guess == randomNumber){
+                System.out.println("You Guessed it!!!");
+                flag = false;
+            }
+            else {
+                System.out.println("Please Try Again....");
+            }
+        }
     }
 
     public void ex10() {
         System.out.println("Student 1: ex10.");
     }
-
     //
     // Private helper methods
     //
@@ -199,7 +230,6 @@ public class JavaOne {
         }
         return true;
     }
-
     public boolean isvowel(char c) {
         String vowel = "aeiouAEIOU";
         for (int i = 0; i < vowel.length(); i++) {
