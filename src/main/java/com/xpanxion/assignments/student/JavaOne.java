@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.student;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class JavaOne {
@@ -8,7 +9,8 @@ public class JavaOne {
     // Constructors
     //
 
-    public JavaOne() {}
+    public JavaOne() {
+    }
 
     //
     // Public methods
@@ -38,9 +40,9 @@ public class JavaOne {
         System.out.println("Enter a string: ");
         String sentence = sc.nextLine();
         int count = 0;
-        for(int i = 0; i < sentence.length(); i++){
+        for (int i = 0; i < sentence.length(); i++) {
             char c = sentence.charAt(i);
-            if(Character.isUpperCase(c)){
+            if (Character.isUpperCase(c)) {
                 count++;
             }
         }
@@ -58,7 +60,7 @@ public class JavaOne {
         System.out.println("Enter a string: ");
         String sentence = sc.nextLine();
         String[] arr = sentence.split(" ");
-        for(int i = 0; i < arr.length; i+=2){
+        for (int i = 0; i < arr.length; i += 2) {
             arr[i] = arr[i].toUpperCase();
         }
         System.out.printf(String.join(" ", arr));
@@ -76,10 +78,9 @@ public class JavaOne {
         sc = new Scanner(System.in);
         System.out.println("Enter a string: ");
         String word = sc.nextLine();
-        if(ispalindrome(word.toLowerCase())){
+        if (ispalindrome(word.toLowerCase())) {
             System.out.println("YES");
-        }
-        else {
+        } else {
             System.out.println("NO");
         }
     }
@@ -96,24 +97,24 @@ public class JavaOne {
         sc = new Scanner(System.in);
         String word = sc.nextLine();
         int vowel = 0, constants = 0;
-        for(int i = 0; i < word.length(); i++){
+        for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
-            if(isvowel(c)){
+            if (isvowel(c)) {
                 vowel++;
-            }
-            else {
+            } else {
                 constants++;
             }
         }
         System.out.printf("Number of Vowel %d \nNumber of Constants %d", vowel, constants);
     }
+
     public void ex6() {
         sc = new Scanner(System.in);
         System.out.print("Enter First Number: ");
         int one = sc.nextInt();
         System.out.print("Enter Second Number: ");
         int two = sc.nextInt();
-        System.out.printf("Result %d",(one+two));
+        System.out.printf("Result %d", (one + two));
     }
 
     public void ex7() {
@@ -127,17 +128,46 @@ public class JavaOne {
         String operation = sc.nextLine();
         String op = operation;
         int res = 0;
-        switch (op){
-            case "sub" -> res = one -two;
+        switch (op) {
+            case "sub" -> res = one - two;
             case "add" -> res = one + two;
             case "div" -> res = one / two;
-            case  "mul" -> res = one * two;
+            case "mul" -> res = one * two;
         }
         System.out.printf("Result : %d", res);
     }
 
     public void ex8() {
-        System.out.println("Student 1: ex8.");
+        sc = new Scanner(System.in);
+        System.out.print("Enter price per square feet: ");
+        double price = sc.nextDouble();
+        sc.nextLine();
+        double total = 0.0;
+        while (true) {
+            System.out.print("Enter room dimensions (width x height): ");
+            String input = sc.nextLine().trim();
+            if(input.equalsIgnoreCase("done")){
+                break;
+            }
+            if(input.equals("0")){
+                break;
+            }
+            String[] dimensions = input.split("x");
+            if(dimensions.length != 2){
+                System.out.println("Invalid values");
+                continue;
+            }
+            try {
+                double width = Double.parseDouble(dimensions[0].trim());
+                double height = Double.parseDouble(dimensions[1].trim());
+                double roomArea = width * height;
+                double roomCost = roomArea * price;
+                total += roomCost;
+            }catch (NumberFormatException e){
+                System.out.println("Please Enter valid numbers for width and height");
+            }
+        }
+        System.out.printf("Total cost: $ %02f", total);
     }
 
     public void ex9() {
@@ -169,10 +199,11 @@ public class JavaOne {
         }
         return true;
     }
-    public boolean isvowel(char c){
+
+    public boolean isvowel(char c) {
         String vowel = "aeiouAEIOU";
-        for(int i = 0; i < vowel.length(); i++){
-            if(vowel.charAt(i) == c){
+        for (int i = 0; i < vowel.length(); i++) {
+            if (vowel.charAt(i) == c) {
                 return true;
             }
         }
