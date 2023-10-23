@@ -70,7 +70,25 @@ public class JavaTwo {
         System.out.println(p);
     }
     public void ex6(){
-
+        sc = new Scanner(System.in);
+        Calculator calculator = new Calculator();
+        int res = 0;
+        while (true){
+            System.out.print("Enter First Number: ");
+            String one = sc.nextLine();
+            if(one.equalsIgnoreCase("done")){
+                break;
+            }
+            System.out.print("Enter Second Number: ");
+            int two = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Enter operation (add, sub, mul, div): ");
+            String operation = sc.nextLine();
+            res = calculator.Calculate(Integer.parseInt(one), two, operation);
+            System.out.printf("Result : %d", res);
+            System.out.println();
+        }
+        calculator.print();
     }
 
 
