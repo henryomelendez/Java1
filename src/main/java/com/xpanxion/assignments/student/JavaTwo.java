@@ -3,10 +3,7 @@ package com.xpanxion.assignments.student;
 import com.xpanxion.assignments.shared.PersonRepository;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class JavaTwo {
@@ -108,6 +105,18 @@ public class JavaTwo {
             System.out.println(p);
         }
     }
+    public void ex8(){
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+        personList = personList.stream().sorted((s1, s2) ->
+                String.CASE_INSENSITIVE_ORDER.compare(s1.getFirstName(), s2.getFirstName()))
+                .toList();
 
-
+        for (Person p : personList) {
+            System.out.println(p);
+        }
+    }
 }
