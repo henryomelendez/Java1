@@ -2,6 +2,7 @@ package com.xpanxion.assignments.student;
 
 import com.xpanxion.assignments.shared.PersonRepository;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -34,11 +35,9 @@ public class JavaTwo {
             sc = new Scanner(System.in);
             System.out.print("Enter Person ID: ");
             String id = sc.nextLine();
-
             if(id.equalsIgnoreCase("done")){
                 break;
             }
-
             try {
                 PersonRepository personRepository = new PersonRepository();
 
@@ -48,5 +47,13 @@ public class JavaTwo {
                 System.out.println("There are no employees with this id");
             }
         }
+    }
+    public void ex3(){
+        var invoice =  new Invoice(1);
+        invoice.addProduct(new Product(111,"Mustard", 2.00));
+        invoice.addProduct(new Product(222,"Ketchup", 3.00));
+        invoice.addProduct(new Product(333,"Franks Hot Sauce", 4.00));
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
 }
