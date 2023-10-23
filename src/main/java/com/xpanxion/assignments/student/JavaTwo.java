@@ -4,8 +4,10 @@ import com.xpanxion.assignments.shared.PersonRepository;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class JavaTwo {
     private static Scanner sc;
@@ -89,6 +91,22 @@ public class JavaTwo {
             System.out.println();
         }
         calculator.print();
+    }
+    public void ex7(){
+        var personList = Arrays.asList(
+                new Person(1, "Peter", "Jones"),
+                new Person(2, "John", "Smith"),
+                new Person(3, "Sue", "Anderson")
+        );
+        List<Person> newPersonList = new ArrayList<>();
+        // TODO: YOUR CODE HERE...
+       for (Person p : personList){
+           p.setLastName("xxx");
+           newPersonList.add(p);
+       }
+        for (Person p : newPersonList) {
+            System.out.println(p);
+        }
     }
 
 
