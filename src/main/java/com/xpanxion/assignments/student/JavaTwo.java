@@ -69,6 +69,9 @@ public class JavaTwo {
         var p = repository.getPerson();
         System.out.println(p);
     }
+    public void ex6(){
+
+    }
 
 
 }
