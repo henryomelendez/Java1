@@ -1,14 +1,12 @@
 package com.xpanxion.assignments.student;
 
-public class Product {
+public class Product extends Base {
     private int id;
     private String name;
     private double cost;
-    public Product(){
 
-    }
     public Product(int id, String name, double cost) {
-        this.id = id;
+        super(id);
         this.name = name;
         this.cost = cost;
     }

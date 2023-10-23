@@ -3,12 +3,12 @@ package com.xpanxion.assignments.student;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Invoice {
+public class Invoice extends Base {
     private int id;
     private List<Product> products;
-    public Invoice (){
-    }
+
     public Invoice(int id){
+        super(id);
         this.id = id;
         this.products = new ArrayList<>();
     }
