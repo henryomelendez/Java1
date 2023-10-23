@@ -114,7 +114,6 @@ public class JavaTwo {
         personList = personList.stream().sorted((s1, s2) ->
                 String.CASE_INSENSITIVE_ORDER.compare(s1.getFirstName(), s2.getFirstName()))
                 .toList();
-
         for (Person p : personList) {
             System.out.println(p);
         }
@@ -125,12 +124,20 @@ public class JavaTwo {
                 new Person(2, "Zoey", "Smith"),
                 new Person(3, "Adam", "Anderson")
         );
-
-        // TODO: Your code here
         List<Person> filteredList = personList.stream().filter(x -> x.getLastName().equalsIgnoreCase("smith")).toList();
-
         for (Person p : filteredList) {
             System.out.println(p);
+        }
+    }
+    public void ex10(){
+        LinkedList<Cat> cats = new LinkedList<>();
+        cats.add(new Cat("Alice"));
+        cats.add(new Cat("Bob"));
+        cats.add(new Cat("Charlie"));
+        cats.add(new Cat("Dan"));
+        while (!cats.isEmpty()){
+            System.out.println(cats.toString());
+            cats.removeFirst();
         }
     }
 }
